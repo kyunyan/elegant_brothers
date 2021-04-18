@@ -16,9 +16,9 @@ class UserRepositoryTest {
     @Test
     void crud(){
         User USER = new User();
-        USER.setUserNm("이건완");
-        USER.setUserID("lee");
-        USER.setUserAge(30);
+//        USER.setUserNm("이건완");
+//        USER.setUserID("lee");
+//        USER.setUserAge(30);
         //user.setBirthday(LocalDate.of(1992,02,11));
         userRepository.save(USER);
 
