@@ -1,39 +1,43 @@
 package com.study.spring.elegantbrothers.user.domain;
 
-import lombok.*;
+import com.study.spring.elegantbrothers.common.domain.embed.Address;
+import com.study.spring.elegantbrothers.common.domain.embed.Log;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
-//@Getter
-//@Setter
-//@ToString
-@NoArgsConstructor // 생성자
-@AllArgsConstructor
-@RequiredArgsConstructor        // 필요한 것을 필수로
-@Data       // getter , setter, toString
-@Table(name = "USERS")
+@Table(name = "USER_MASTER")
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="ID")
+    @GeneratedValue
+    @Column(name = "USER_MASTER_ID")
     private Long id;
 
-    @NonNull
-    @Column(name="USER_ID")
-    private String userID;
+    @Column(name = "GRADE_CODE")
+    private String gradeCode;
 
-    @NonNull
-    @Column(name="USER_NM")
-    private String userNm;
+    @Column(name = "ACCOUNT_ID")
+    private String account;
 
-    @Column(name="USER_AGE")
-    private int userAge;
+    @Column(name = "ACCOUNT_PASSWORD")
+    private String password;
 
+    @Column(name = "ACCOUNT_NAME")
+    private String name;
+
+    @Column(name = "ACCOUNT_EMAIL")
+    private String email;
+
+    @Column(name = "ACCOUNT_BIRTHDAY")
+    private String birthday;
+
+    @Enumerated(EnumType.STRING)
+    private UserStatus delete;
+
+    @Embedded
+    private Address address;
+
+    @Embedded
+    private Log log;
 }
