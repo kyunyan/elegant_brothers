@@ -1,7 +1,8 @@
-package com.study.spring.elegantbrothers.user.domain;
+package com.study.spring.elegantbrothers.user.domain.entity;
 
 import com.study.spring.elegantbrothers.common.domain.embed.Address;
 import com.study.spring.elegantbrothers.common.domain.embed.Log;
+import com.study.spring.elegantbrothers.user.domain.enums.UserStatus;
 
 import javax.persistence.*;
 
@@ -33,7 +34,7 @@ public class User {
     private String birthday;
 
     @Enumerated(EnumType.STRING)
-    private UserStatus delete;
+    private UserStatus userStatus;
 
     @Embedded
     private Address address;

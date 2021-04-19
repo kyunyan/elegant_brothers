@@ -1,4 +1,4 @@
-package com.study.spring.elegantbrothers.user.domain;
+package com.study.spring.elegantbrothers.user.domain.entity;
 
 import javax.persistence.*;
 

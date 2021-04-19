@@ -1,6 +1,6 @@
 package com.study.spring.elegantbrothers.repository;
 
-import com.study.spring.elegantbrothers.user.domain.User;
+import com.study.spring.elegantbrothers.user.domain.entity.User;
 import com.study.spring.elegantbrothers.user.repository.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
