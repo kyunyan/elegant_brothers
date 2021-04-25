@@ -10,6 +10,7 @@ import java.util.List;
 
 @SpringBootTest
 class UserRepositoryTest {
+    /*
     @Autowired
     private UserRepository userRepository;
 
@@ -26,5 +27,5 @@ class UserRepositoryTest {
 
         System.out.println("user : "+ userList);
     }
-
+*/
 }

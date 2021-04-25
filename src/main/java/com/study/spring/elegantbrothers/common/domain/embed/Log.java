@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.persistence.PrePersist;
 import java.time.LocalDateTime;
 
 @Embeddable
@@ -32,20 +33,24 @@ public class Log {
     @Column(name = "UPD_DT")
     private LocalDateTime updDt;
 
-    @Builder
-    public Log(String regId, String regIp, LocalDateTime regDt) {
-        this.regId = regId;
-        this.regIp = regIp;
-        this.regDt = regDt;
+    @PrePersist
+    public void prePersist(){
+        LocalDateTime now = LocalDateTime.now();
+        regDt = now;
+        updDt = now;
     }
 
     @Builder
-    public Log(String regId, String regIp, LocalDateTime regDt, String updId, String updIp, LocalDateTime updDt) {
+    public Log(String regId, String regIp) {
         this.regId = regId;
         this.regIp = regIp;
-        this.regDt = regDt;
+    }
+
+    @Builder
+    public Log(String regId, String regIp, String updId, String updIp) {
+        this.regId = regId;
+        this.regIp = regIp;
         this.updId = updId;
         this.updIp = updIp;
-        this.updDt = updDt;
     }
 }
