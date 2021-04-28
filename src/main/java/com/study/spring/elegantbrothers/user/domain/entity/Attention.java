@@ -12,7 +12,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED) // 생성자
 @Table(name = "ATTENTION")
-public class Attention {
+public class            Attention {
 
     @Id
     @Column(name = "CSTMR_ID", length = 20)
