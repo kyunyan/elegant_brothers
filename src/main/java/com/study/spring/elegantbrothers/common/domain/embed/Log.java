@@ -5,9 +5,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
-import javax.persistence.PrePersist;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Embeddable
@@ -37,6 +35,20 @@ public class Log {
     public void prePersist(){
         LocalDateTime now = LocalDateTime.now();
         regDt = now;
+
+    }
+
+    @PreUpdate
+    public void preUpdate(){
+        LocalDateTime now = LocalDateTime.now();
+
+        updDt = now;
+    }
+
+    @PreRemove
+    public void preRemove(){
+        LocalDateTime now = LocalDateTime.now();
+
         updDt = now;
     }
 
